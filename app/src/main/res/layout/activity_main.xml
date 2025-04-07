@@ -17,30 +17,30 @@
         android:text="@string/text_title"
         android:gravity="center"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/radio_hint"
-        android:textSize="@dimen/textSize_medium"
-        android:layout_marginBottom="@dimen/margin_xsmall"
-        />
-    <RadioGroup
-        android:id="@+id/rg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <RadioButton
-            android:id="@+id/rb_female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/female"
-            android:checked="false"/>
-        <RadioButton
-            android:id="@+id/rb_male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/male"/>
-    </RadioGroup>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/radio_hint"-->
+<!--        android:textSize="@dimen/textSize_medium"-->
+<!--        android:layout_marginBottom="@dimen/margin_xsmall"-->
+<!--        />-->
+<!--    <RadioGroup-->
+<!--        android:id="@+id/rg"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
+<!--        <RadioButton-->
+<!--            android:id="@+id/rb_female"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/female"-->
+<!--            android:checked="false"/>-->
+<!--        <RadioButton-->
+<!--            android:id="@+id/rb_male"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/male"/>-->
+<!--    </RadioGroup>-->
     <!-- 신장 입력 -->
     <LinearLayout
         android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_plus"
+        android:id="@+id/btn_cal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/calculate"
@@ -116,9 +116,10 @@
         android:text="@string/text_result"
         android:textColor="@color/red"/>
     <ImageView
+        android:id="@+id/img_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/SpongeBob_SquarePants_logo"
+
         android:adjustViewBounds="true"
         />
 
