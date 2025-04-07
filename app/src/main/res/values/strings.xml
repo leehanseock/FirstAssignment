@@ -1,17 +1,23 @@
 <resources>
     <string name="app_name">BMICalculator</string>
-    <string name="height">신장: </string>
+    <string name="name">Name: </string>
+    <string name="edit_hint0">이름 입력</string>
+    <string name="height">Height: </string>
     <string name="edit_hint1">신장 입력</string>
-    <string name="weight">체중: </string>
+    <string name="weight">Weight: </string>
     <string name="edit_hint2">체중 입력</string>
-    <string name="calculate">계산</string>
-    <string name="text_result">계산 결과:</string>
-    <string name="text_title">BMI 계산기</string>
+    <string name="calculate">Calculate</string>
+    <string name="text_result">Result:</string>
+    <string name="text_title">BMI Calculator</string>
     <string name="radio_hint">당신의 성별을 선택해주십시오.</string>
     <string name="female">여성</string>
     <string name="male">남성</string>
     <string name="measure1">㎝</string>
     <string name="measure2">㎏</string>
     <string name="measure_result">㎏/㎡</string>
-
+    <string name="bmi1">저체중</string>
+    <string name="bmi2">정상 체중</string>
+    <string name="bmi3">과체중</string>
+    <string name="bmi4">비만</string>
+    <string name="result_format">계산 결과: %s님의 BMI 지수는 %.1f%s 입니다.\n당신은 %s 입니다.</string>
 </resources>

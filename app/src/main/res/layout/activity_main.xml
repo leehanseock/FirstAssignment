@@ -1,126 +1,176 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margin_small"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/textSize_large"
-        android:layout_marginBottom="@dimen/margin_small"
-        android:text="@string/text_title"
-        android:gravity="center"
-        />
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/radio_hint"-->
-<!--        android:textSize="@dimen/textSize_medium"-->
-<!--        android:layout_marginBottom="@dimen/margin_xsmall"-->
-<!--        />-->
-<!--    <RadioGroup-->
-<!--        android:id="@+id/rg"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical">-->
-<!--        <RadioButton-->
-<!--            android:id="@+id/rb_female"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/female"-->
-<!--            android:checked="false"/>-->
-<!--        <RadioButton-->
-<!--            android:id="@+id/rb_male"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/male"/>-->
-<!--    </RadioGroup>-->
-    <!-- 신장 입력 -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="@dimen/margin_xsmall">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/height"
-            android:textSize="@dimen/textSize_medium"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp"/>
-
-        <EditText
-            android:id="@+id/edit1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_hint1"
-            android:inputType="numberDecimal"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/measure1"
-            android:textSize="@dimen/textSize_medium"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp"/>
-    </LinearLayout>
-    <!-- 신장 입력 -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="@dimen/margin_xsmall">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/weight"
-            android:textSize="@dimen/textSize_medium"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp"/>
-
-        <EditText
-            android:id="@+id/edit2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="@string/edit_hint1"
-            android:inputType="numberDecimal"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/measure2"
-            android:textSize="@dimen/textSize_medium"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="8dp"/>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_cal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/calculate"
-        android:layout_marginBottom="@dimen/margin_xsmall"/>
-
-    <TextView
-        android:id="@+id/text_result"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="top"
-        android:textSize="@dimen/textSize_large"
-        android:text="@string/text_result"
-        android:textColor="@color/red"/>
+    <!-- 배경 이미지 -->
     <ImageView
-        android:id="@+id/img_view"
+        android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        android:contentDescription="@string/app_name" />
 
-        android:adjustViewBounds="true"
-        />
+    <View
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
 
-</LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_small">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize_xlarge"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:text="@string/text_title"
+                android:gravity="center"
+                android:fontFamily="@font/kraby"
+                android:textColor="@color/title_color" />
+
+            <!-- 이름 입력 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_xsmall">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name"
+                    android:textSize="@dimen/textSize_medium"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/kraby"
+                    android:textColor="@color/title_color"/>
+
+                <EditText
+                    android:id="@+id/edit0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_hint0"
+                    android:inputType="text"
+                    android:textColorHint="@color/title_color"
+                    android:backgroundTint="@color/title_color"
+                    />
+            </LinearLayout>
+
+            <!-- 신장 입력 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_xsmall">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/height"
+                    android:textSize="@dimen/textSize_medium"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/kraby"
+                    android:textColor="@color/title_color"/>
+
+                <EditText
+                    android:id="@+id/edit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_hint1"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="@color/title_color"
+                    android:backgroundTint="@color/title_color"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/measure1"
+                    android:textSize="@dimen/textSize_medium"
+                    android:textColor="@color/title_color"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp" />
+            </LinearLayout>
+
+            <!-- 체중 입력 -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/margin_xsmall">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/weight"
+                    android:textSize="@dimen/textSize_medium"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/kraby"
+                    android:textColor="@color/title_color"/>
+
+                <EditText
+                    android:id="@+id/edit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/edit_hint1"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="@color/title_color"
+                    android:backgroundTint="@color/title_color"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/measure2"
+                    android:textSize="@dimen/textSize_medium"
+                    android:textColor="@color/title_color"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_cal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate"
+                android:layout_marginBottom="@dimen/margin_xsmall"
+                android:fontFamily="@font/kraby"
+                android:textSize="@dimen/textSize_medium"
+                android:backgroundTint="@color/button_color" />
+
+            <TextView
+                android:id="@+id/text_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/textSize_medium"
+                android:fontFamily="@font/kraby"
+                android:gravity="top"
+                android:text="@string/text_result"
+                android:textColor="@color/title_color"
+                android:textSize="@dimen/textSize_large" />
+
+            <ImageView
+                android:id="@+id/img_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/spongebob_squarepants_logo"
+                android:adjustViewBounds="true" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
