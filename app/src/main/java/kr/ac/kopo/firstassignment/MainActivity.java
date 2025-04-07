@@ -5,8 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textResult;
     ImageView imgView;
     Button btnCal;
-    RadioGroup rg;
-    RadioButton rbFemale, rbMale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
         btnCal = findViewById(R.id.btn_cal);
         textResult = findViewById(R.id.text_result);
         imgView = findViewById(R.id.img_view);
-        rbFemale.setOnTouchListener(btnTouchListener);
-        rbMale.setOnTouchListener(btnTouchListener);
         btnCal.setOnTouchListener(btnTouchListener);
     }
 
@@ -72,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 edit2.setFocusable(true);
                 return true;
             }
-            textResult.setText(String.format("계산 결과: 당신의 BMI 지수는 %.3f입니다.",result));
+            textResult.setText(String.format("계산 결과: 당신의 BMI 지수는 %.1f입니다.",result));
             return true;
         }
     };
